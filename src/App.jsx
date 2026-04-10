@@ -487,6 +487,14 @@ function ProductPage({ product, setPage, openProduct, addToCart }) {
 
   const details = product.details || [];
 
+const goToPreviousMedia = () => {
+  setActiveMedia((current) => (current === 0 ? mediaItems.length - 1 : current - 1));
+};
+
+const goToNextMedia = () => {
+  setActiveMedia((current) => (current === mediaItems.length - 1 ? 0 : current + 1));
+};
+
   return (
     <>
       <main>
@@ -497,30 +505,42 @@ function ProductPage({ product, setPage, openProduct, addToCart }) {
 
           <div id="product-gallery" className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 md:grid-cols-[1fr_1fr] md:pb-20">
             <div>
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6">
-                <div className="flex h-[420px] items-end justify-between rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-8">
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.28em] text-white/35">{mediaItems[activeMedia].type === "video" ? "Video Preview" : "Image Preview"}</div>
-                    <div className="mt-4 text-5xl font-semibold text-white/15">{product.id}</div>
-                    <div className="mt-3 text-lg text-white/55">{mediaItems[activeMedia].label}</div>
-                  </div>
-                  <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">{product.badge}</div>
-                </div>
-              </div>
+             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6">
+  <div className="relative flex h-[420px] items-end justify-between rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-8">
+    <button
+      type="button"
+      onClick={goToPreviousMedia}
+      className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg text-white transition hover:bg-black/65"
+      aria-label="Previous image"
+    >
+      ←
+    </button>
 
-              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {mediaItems.map((item, index) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setActiveMedia(index)}
-                    className={`rounded-[1.25rem] border p-4 text-left transition ${activeMedia === index ? "border-white bg-white text-black" : "border-white/10 bg-white/[0.03] text-white hover:bg-white/[0.05]"}`}
-                  >
-                    <div className="text-xs uppercase tracking-[0.24em] opacity-70">{item.type}</div>
-                    <div className="mt-2 text-sm font-medium">{item.label}</div>
-                  </button>
-                ))}
-              </div>
+    <div>
+      <div className="text-xs uppercase tracking-[0.28em] text-white/35">
+        {mediaItems[activeMedia].type === "video" ? "Video Preview" : "Image Preview"}
+      </div>
+      <div className="mt-4 text-5xl font-semibold text-white/15">{product.id}</div>
+      <div className="mt-3 text-lg text-white/55">{mediaItems[activeMedia].label}</div>
+      <div className="mt-6 text-sm text-white/35">
+        {activeMedia + 1} / {mediaItems.length}
+      </div>
+    </div>
+
+    <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">
+      {product.badge}
+    </div>
+
+    <button
+      type="button"
+      onClick={goToNextMedia}
+      className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg text-white transition hover:bg-black/65"
+      aria-label="Next image"
+    >
+      →
+    </button>
+  </div>
+</div>
             </div>
 
             <div className="flex flex-col justify-center">
