@@ -165,7 +165,7 @@ function HomePage({ setPage, openProduct }) {
   <div className="order-2 flex flex-col justify-center md:order-1">
     <h1 className="mt-2 md:mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
     <p className="mt-4 md:mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
-      WEAVE offers modern ready-for-sale products and custom design work with a clean premium identity built in Bahrain.
+      Built In Bahrain
     </p>
 
     <div className="mt-8 md:mt-14 flex flex-wrap gap-4">
@@ -258,12 +258,12 @@ function ShopPage({ setPage, openProduct, addToCart }) {
       <main>
         <section className="border-b border-white/10">
           <div className="mx-auto grid max-w-7xl gap-4 md:gap-10 px-6 py-6 md:grid-cols-[1.1fr_0.9fr] md:py-20">
-            <div className="flex flex-col justify-center">
+           <div className="order-2 flex flex-col justify-center md:order-1">
               <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Ready-Made Collection</div>
               <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Discover ready-made WEAVE products crafted with a clean modern identity, designed to feel distinctive, useful, and gift-worthy.</p>
+          
             </div>
-            <div className="flex items-center justify-center">
+           <div className="order-1 flex items-center justify-center md:order-2">
               <img src="/logo.svg" alt="WEAVE logo" className="h-64 w-64 invert object-contain md:h-96 md:w-96" />
             </div>
           </div>
@@ -547,7 +547,7 @@ const goToNextMedia = () => {
               <div className="text-sm uppercase tracking-[0.3em] text-white/40">{product.category}</div>
               <h1 className="mt-3 text-5xl font-semibold leading-tight md:text-6xl">{product.name}</h1>
               <div className="mt-6 text-2xl font-medium">{product.price}</div>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">{product.description}</p>
+             
 
               <ul className="mt-8 space-y-3 text-sm leading-7 text-white/70">
                 {details.map((item) => (
