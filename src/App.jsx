@@ -399,30 +399,6 @@ function CustomInquiryPage({ setPage }) {
   return (
     <>
       <main>
-        <section className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1fr_1fr] md:py-20">
-            <div className="order-3 flex flex-col justify-center md:order-1">
-              <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Custom Inquiry</div>
-              <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">Let’s build your idea</h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Tell WEAVE what you need and we’ll shape it into a custom design built around your purpose, dimensions, and style.</p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a href="https://wa.me/97339221555" target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02]">Chat on WhatsApp</a>
-                <button onClick={() => setPage("home")} className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-medium transition hover:border-white/40 hover:bg-white/5">Back to Home</button>
-              </div>
-            </div>
-
-            <div className="order-2 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:order-2">
-            
-              <h2 className="mt-3 text-3xl font-semibold">Reach us directly</h2>
-              <div className="mt-8 space-y-4 text-sm text-white/70">
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Email</div><a href="mailto:bhweave@gmail.com" className="mt-1 block text-base text-white hover:text-white/80">bhweave@gmail.com</a></div>
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Phone</div><a href="tel:+97339221555" className="mt-1 block text-base text-white hover:text-white/80">+973 39221555</a></div>
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Instagram</div><a href="https://instagram.com/weave.bh" target="_blank" rel="noopener noreferrer" className="mt-1 block text-base text-white hover:text-white/80">@weave.bh</a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="inquiry-form" className="order-1 mx-auto max-w-7xl px-6 py-10 md:py-20">
           <div className="mb-8">
             <div className="text-sm uppercase tracking-[0.3em] text-white/40">Custom Form</div>
@@ -471,6 +447,32 @@ function CustomInquiryPage({ setPage }) {
             </form>
           </div>
         </section>
+        
+        <section className="border-b border-white/10">
+          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1fr_1fr] md:py-20">
+            <div className="order-3 flex flex-col justify-center md:order-1">
+              <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Custom Inquiry</div>
+              <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">Let’s build your idea</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Tell WEAVE what you need and we’ll shape it into a custom design built around your purpose, dimensions, and style.</p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="https://wa.me/97339221555" target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02]">Chat on WhatsApp</a>
+                <button onClick={() => setPage("home")} className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-medium transition hover:border-white/40 hover:bg-white/5">Back to Home</button>
+              </div>
+            </div>
+
+            <div className="order-2 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:order-2">
+            
+              <h2 className="mt-3 text-3xl font-semibold">Reach us directly</h2>
+              <div className="mt-8 space-y-4 text-sm text-white/70">
+                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Email</div><a href="mailto:bhweave@gmail.com" className="mt-1 block text-base text-white hover:text-white/80">bhweave@gmail.com</a></div>
+                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Phone</div><a href="tel:+97339221555" className="mt-1 block text-base text-white hover:text-white/80">+973 39221555</a></div>
+                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Instagram</div><a href="https://instagram.com/weave.bh" target="_blank" rel="noopener noreferrer" className="mt-1 block text-base text-white hover:text-white/80">@weave.bh</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
       </main>
       <Footer />
     </>
