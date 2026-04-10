@@ -399,80 +399,163 @@ function CustomInquiryPage({ setPage }) {
   return (
     <>
       <main>
-        <section id="inquiry-form" className="order-1 mx-auto max-w-7xl px-6 py-10 md:py-20">
-          <div className="mb-8">
-            <div className="text-sm uppercase tracking-[0.3em] text-white/40">Custom Form</div>
-            <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Tell us about your request</h2>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
-            <form onSubmit={handleSubmit} className="grid gap-6 md:grid-cols-2">
-              <div>
-                <label className="mb-2 block text-sm text-white/60">Full Name</label>
-                <input value={formData.name} onChange={(e) => handleChange("name", e.target.value)} type="text" placeholder="Your name" className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30" required />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm text-white/60">Phone / WhatsApp</label>
-                <input value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} type="text" placeholder="e.g. +973 ..." className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30" required />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm text-white/60">Email</label>
-                <input value={formData.email} onChange={(e) => handleChange("email", e.target.value)} type="email" placeholder="Your email" className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30" required />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm text-white/60">Project Type</label>
-                <select value={formData.type} onChange={(e) => handleChange("type", e.target.value)} className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30">
-                  <option>Custom product</option>
-                  <option>Functional part</option>
-                  <option>Gift / display item</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="md:col-span-2">
-                <label className="mb-2 block text-sm text-white/60">Project Description</label>
-                <textarea value={formData.message} onChange={(e) => handleChange("message", e.target.value)} rows="6" placeholder="Tell us what you want to make, dimensions, style, quantity, and any useful details." className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30" required />
-              </div>
-              <div className="md:col-span-2 flex flex-wrap gap-4">
-                <button type="submit" disabled={isSubmitting} className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60">
-                  {isSubmitting ? "Sending..." : "Submit Request"}
-                </button>
-                <a href="https://wa.me/97339221555" target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-white/15 px-6 py-3 text-sm font-medium transition hover:bg-white/5">Or send on WhatsApp</a>
-              </div>
-              <div className="md:col-span-2 text-sm text-white/45">We’ll respond within 24 hours</div>
-              {submitStatus.message ? (
-                <div className={`md:col-span-2 rounded-2xl border px-4 py-3 text-sm ${submitStatus.type === "success" ? "border-white/20 bg-white/[0.04] text-white" : "border-white/10 bg-white/[0.02] text-white/75"}`}>
-                  {submitStatus.message}
-                </div>
-              ) : null}
-            </form>
-          </div>
-        </section>
-        
         <section className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1fr_1fr] md:py-20">
-            <div className="order-3 flex flex-col justify-center md:order-1">
-              <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Custom Inquiry</div>
-              <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">Let’s build your idea</h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Tell WEAVE what you need and we’ll shape it into a custom design built around your purpose, dimensions, and style.</p>
+          <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-[1fr_1fr] md:gap-10 md:py-20">
+            <div className="order-1 flex flex-col justify-center md:order-1">
+              <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">
+                Custom Inquiry
+              </div>
+              <h1 className="mt-6 text-5xl font-semibold leading-[0.95] md:mt-8 md:text-7xl">
+                Let’s build your idea
+              </h1>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="https://wa.me/97339221555" target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02]">Chat on WhatsApp</a>
-                <button onClick={() => setPage("home")} className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-medium transition hover:border-white/40 hover:bg-white/5">Back to Home</button>
+                <a
+                  href="https://wa.me/97339221555"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02]"
+                >
+                  Chat on WhatsApp
+                </a>
+                <button
+                  onClick={() => setPage("home")}
+                  className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-medium transition hover:border-white/40 hover:bg-white/5"
+                >
+                  Back to Home
+                </button>
               </div>
             </div>
 
-            <div className="order-2 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:order-2">
-            
-              <h2 className="mt-3 text-3xl font-semibold">Reach us directly</h2>
-              <div className="mt-8 space-y-4 text-sm text-white/70">
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Email</div><a href="mailto:bhweave@gmail.com" className="mt-1 block text-base text-white hover:text-white/80">bhweave@gmail.com</a></div>
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Phone</div><a href="tel:+97339221555" className="mt-1 block text-base text-white hover:text-white/80">+973 39221555</a></div>
-                <div className="rounded-2xl border border-white/10 p-4"><div className="text-white/45">Instagram</div><a href="https://instagram.com/weave.bh" target="_blank" rel="noopener noreferrer" className="mt-1 block text-base text-white hover:text-white/80">@weave.bh</a></div>
+            <div className="order-2 md:order-2">
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+                <div className="mb-8">
+                  <div className="text-sm uppercase tracking-[0.3em] text-white/40">Custom Form</div>
+                  <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Tell us about your request</h2>
+                </div>
+
+                <form onSubmit={handleSubmit} className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm text-white/60">Full Name</label>
+                    <input
+                      value={formData.name}
+                      onChange={(e) => handleChange("name", e.target.value)}
+                      type="text"
+                      placeholder="Your name"
+                      className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm text-white/60">Phone / WhatsApp</label>
+                    <input
+                      value={formData.phone}
+                      onChange={(e) => handleChange("phone", e.target.value)}
+                      type="text"
+                      placeholder="e.g. +973 ..."
+                      className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm text-white/60">Email</label>
+                    <input
+                      value={formData.email}
+                      onChange={(e) => handleChange("email", e.target.value)}
+                      type="email"
+                      placeholder="Your email"
+                      className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm text-white/60">Project Type</label>
+                    <select
+                      value={formData.type}
+                      onChange={(e) => handleChange("type", e.target.value)}
+                      className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30"
+                    >
+                      <option>Custom product</option>
+                      <option>Functional part</option>
+                      <option>Gift / display item</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="mb-2 block text-sm text-white/60">Project Description</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => handleChange("message", e.target.value)}
+                      rows="6"
+                      placeholder="Tell us what you want to make, dimensions, style, quantity, and any useful details."
+                      className="w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-white outline-none transition focus:border-white/30"
+                      required
+                    />
+                  </div>
+                  <div className="md:col-span-2 flex flex-wrap gap-4">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="rounded-2xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {isSubmitting ? "Sending..." : "Submit Request"}
+                    </button>
+                    <a
+                      href="https://wa.me/97339221555"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-2xl border border-white/15 px-6 py-3 text-sm font-medium transition hover:bg-white/5"
+                    >
+                      Or send on WhatsApp
+                    </a>
+                  </div>
+                  <div className="md:col-span-2 text-sm text-white/45">We’ll respond within 24 hours</div>
+                  {submitStatus.message ? (
+                    <div
+                      className={`md:col-span-2 rounded-2xl border px-4 py-3 text-sm ${
+                        submitStatus.type === "success"
+                          ? "border-white/20 bg-white/[0.04] text-white"
+                          : "border-white/10 bg-white/[0.02] text-white/75"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  ) : null}
+                </form>
+              </div>
+            </div>
+
+            <div className="order-3 md:col-span-2">
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+                <h2 className="text-3xl font-semibold">Reach us directly</h2>
+                <div className="mt-8 space-y-4 text-sm text-white/70">
+                  <div className="rounded-2xl border border-white/10 p-4">
+                    <div className="text-white/45">Email</div>
+                    <a href="mailto:bhweave@gmail.com" className="mt-1 block text-base text-white hover:text-white/80">
+                      bhweave@gmail.com
+                    </a>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 p-4">
+                    <div className="text-white/45">Phone</div>
+                    <a href="tel:+97339221555" className="mt-1 block text-base text-white hover:text-white/80">
+                      +973 39221555
+                    </a>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 p-4">
+                    <div className="text-white/45">Instagram</div>
+                    <a
+                      href="https://instagram.com/weave.bh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block text-base text-white hover:text-white/80"
+                    >
+                      @weave.bh
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
-
-        
       </main>
       <Footer />
     </>
