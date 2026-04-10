@@ -257,7 +257,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
     <>
       <main>
         <section className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-10 md:grid-cols-[1.1fr_0.9fr] md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-4 md:gap-10 px-6 py-6 md:grid-cols-[1.1fr_0.9fr] md:py-20">
             <div className="flex flex-col justify-center">
               <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Ready-Made Collection</div>
               <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
