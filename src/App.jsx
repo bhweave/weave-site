@@ -163,12 +163,12 @@ function HomePage({ setPage, openProduct }) {
       <main>
       <section className="mx-auto grid max-w-7xl gap-6 md:gap-10 px-6 pb-6 pt-16 md:grid-cols-[1.15fr_0.85fr] md:pb-8 md:pt-24">
   <div className="order-2 flex flex-col justify-center md:order-1">
-    <h1 className="mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
-    <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
+    <h1 className="mt-2 md:mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
+    <p className="mt-4 md:mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
       WEAVE offers modern ready-for-sale products and custom design work with a clean premium identity built in Bahrain.
     </p>
 
-    <div className="mt-14 flex flex-wrap gap-4">
+    <div className="mt-8 md:mt-14 flex flex-wrap gap-4">
       <button
         onClick={() => setSelectedHomeSection("shop")}
         className={`rounded-2xl px-6 py-3 text-sm font-medium transition ${selectedHomeSection === "shop" ? "bg-white text-black shadow-lg" : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"}`}
