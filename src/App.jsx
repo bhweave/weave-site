@@ -306,7 +306,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-[0.28em] text-white/35">{product.category}</div>
                   <h3 className="mt-3 text-xl font-medium">{product.name}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/55">{product.description}</p>
+                 
                   <div className="mt-6 flex items-center justify-between gap-3">
                     <div className="text-lg font-medium">{product.price}</div>
                     <div className="flex items-center gap-3">
