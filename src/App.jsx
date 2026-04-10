@@ -161,33 +161,33 @@ function HomePage({ setPage, openProduct }) {
   return (
     <>
       <main>
-        <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-6 pt-16 md:grid-cols-[1.15fr_0.85fr] md:pb-8 md:pt-24">
-          <div className="flex flex-col justify-center">
-            <h1 className="mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
-              WEAVE offers modern ready-for-sale products and custom design work with a clean premium identity built in Bahrain.
-            </p>
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-6 pt-16 md:grid-cols-[1.15fr_0.85fr] md:pb-8 md:pt-24">
+  <div className="order-2 flex flex-col justify-center md:order-1">
+    <h1 className="mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
+    <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
+      WEAVE offers modern ready-for-sale products and custom design work with a clean premium identity built in Bahrain.
+    </p>
 
-            <div className="mt-14 flex flex-wrap gap-4">
-              <button
-                onClick={() => setSelectedHomeSection("shop")}
-                className={`rounded-2xl px-6 py-3 text-sm font-medium transition ${selectedHomeSection === "shop" ? "bg-white text-black shadow-lg" : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"}`}
-              >
-                Shop Products
-              </button>
-              <button
-                onClick={() => setSelectedHomeSection("custom")}
-                className={`rounded-2xl px-6 py-3 text-sm font-medium transition ${selectedHomeSection === "custom" ? "bg-white text-black shadow-lg" : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"}`}
-              >
-                Request Custom Design
-              </button>
-            </div>
-          </div>
+    <div className="mt-14 flex flex-wrap gap-4">
+      <button
+        onClick={() => setSelectedHomeSection("shop")}
+        className={`rounded-2xl px-6 py-3 text-sm font-medium transition ${selectedHomeSection === "shop" ? "bg-white text-black shadow-lg" : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"}`}
+      >
+        Shop Products
+      </button>
+      <button
+        onClick={() => setSelectedHomeSection("custom")}
+        className={`rounded-2xl px-6 py-3 text-sm font-medium transition ${selectedHomeSection === "custom" ? "bg-white text-black shadow-lg" : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"}`}
+      >
+        Request Custom Design
+      </button>
+    </div>
+  </div>
 
-          <div className="flex items-center justify-center">
-            <img src={inlineLogo} alt="WEAVE logo" className="h-64 w-64 object-contain md:h-80 md:w-80" />
-          </div>
-        </section>
+  <div className="order-1 flex items-center justify-center md:order-2">
+    <img src={inlineLogo} alt="WEAVE logo" className="h-64 w-64 object-contain md:h-80 md:w-80" />
+  </div>
+</section>
 
         {selectedHomeSection === "shop" ? (
           <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
