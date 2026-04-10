@@ -161,7 +161,7 @@ function HomePage({ setPage, openProduct }) {
   return (
     <>
       <main>
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-6 pt-16 md:grid-cols-[1.15fr_0.85fr] md:pb-8 md:pt-24">
+      <section className="mx-auto grid max-w-7xl gap-6 md:gap-10 px-6 pb-6 pt-16 md:grid-cols-[1.15fr_0.85fr] md:pb-8 md:pt-24">
   <div className="order-2 flex flex-col justify-center md:order-1">
     <h1 className="mt-4 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
     <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
@@ -185,7 +185,7 @@ function HomePage({ setPage, openProduct }) {
   </div>
 
   <div className="order-1 flex items-center justify-center md:order-2">
-    <img src="/logo.svg" alt="WEAVE logo" className="h-64 w-64 invert object-contain md:h-80 md:w-80" />
+    <img src="/logo.svg" alt="WEAVE logo" className="h-96 w-96 invert object-contain md:h-80 md:w-80" />
   </div>
 </section>
 
@@ -264,7 +264,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Discover ready-made WEAVE products crafted with a clean modern identity, designed to feel distinctive, useful, and gift-worthy.</p>
             </div>
             <div className="flex items-center justify-center">
-              <img src="/logo.svg" alt="WEAVE logo" className="h-64 w-64 invert object-contain md:h-80 md:w-80" />
+              <img src="/logo.svg" alt="WEAVE logo" className="h-96 w-96 invert object-contain md:h-80 md:w-80" />
             </div>
           </div>
         </section>
