@@ -400,6 +400,7 @@ function CustomInquiryPage({ setPage }) {
     <>
       <main>
         <section id="inquiry-form" className="order-1 mx-auto max-w-7xl px-6 py-10 md:py-20">
+          <div className="order-2 md:order-2">
           <div className="mb-8">
             <div className="text-sm uppercase tracking-[0.3em] text-white/40">Custom Form</div>
             <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Tell us about your request</h2>
@@ -447,10 +448,10 @@ function CustomInquiryPage({ setPage }) {
             </form>
           </div>
         </section>
-        
+
         <section className="border-b border-white/10">
           <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1fr_1fr] md:py-20">
-            <div className="order-3 flex flex-col justify-center md:order-1">
+            <div className="order-1 md:order-1 flex flex-col justify-center">
               <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Custom Inquiry</div>
               <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">Let’s build your idea</h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">Tell WEAVE what you need and we’ll shape it into a custom design built around your purpose, dimensions, and style.</p>
@@ -460,7 +461,7 @@ function CustomInquiryPage({ setPage }) {
               </div>
             </div>
 
-            <div className="order-2 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:order-2">
+            <div className="order-3 md:order-3 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
             
               <h2 className="mt-3 text-3xl font-semibold">Reach us directly</h2>
               <div className="mt-8 space-y-4 text-sm text-white/70">
