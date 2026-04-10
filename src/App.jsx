@@ -257,7 +257,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
     <>
       <main>
         <section className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-10 md:grid-cols-[1.1fr_0.9fr] md:py-20">
             <div className="flex flex-col justify-center">
               <div className="inline-flex w-fit items-center rounded-full border border-white/15 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-white/55">Ready-Made Collection</div>
               <h1 className="mt-8 text-5xl font-semibold leading-[0.95] md:text-7xl">We Weave it into Reality</h1>
@@ -269,7 +269,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
           </div>
         </section>
 
-        <section id="categories" className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+        <section id="categories" className="mx-auto max-w-7xl px-6 py-6 md:py-14">
           <div className="mb-6">
             <div className="text-sm uppercase tracking-[0.3em] text-white/40">Categories</div>
             <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Shop by collection</h2>
@@ -287,7 +287,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
           </div>
         </section>
 
-        <section id="products" className="mx-auto max-w-7xl px-6 pb-16 pt-4 md:pb-24">
+        <section id="products" className="mx-auto max-w-7xl px-6 pb-10 pt-2 md:pb-24">
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-white/40">Products</div>
