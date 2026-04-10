@@ -288,13 +288,21 @@ function ShopPage({ setPage, openProduct, addToCart }) {
         </section>
 
         <section id="products" className="mx-auto max-w-7xl px-6 pb-10 pt-2 md:pb-24">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-white/40">Products</div>
-              <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Featured ready-for-sale items</h2>
-            </div>
-            <div className="text-sm text-white/45">{products.length} products shown</div>
-          </div>
+          <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+  <div>
+    <button
+      onClick={() => setPage("home")}
+      className="mb-4 rounded-2xl border border-white/15 px-4 py-2 text-sm font-medium transition hover:bg-white/5"
+    >
+      ← Back to Home
+    </button>
+
+    <div className="text-sm uppercase tracking-[0.3em] text-white/40">Products</div>
+    <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Featured ready-for-sale items</h2>
+  </div>
+
+  <div className="text-sm text-white/45">{products.length} products shown</div>
+</div>
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => (
