@@ -72,12 +72,12 @@ function Header({ page, setPage, cartCount }) {
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-3">
-          <img src="/logo.svg" alt="WEAVE logo" className="h-16 w-16 invert object-contain" />
-          <div className="text-lg tracking-[0.35em]">WEAVE</div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6 md:py-5">
+        <div className="flex min-w-0 items-center gap-3">
+          <img src="/logo.svg" alt="WEAVE logo" className="h-12 w-12 invert object-contain md:h-16 md:w-16" />
+          <div className="truncate text-base tracking-[0.25em] md:text-lg md:tracking-[0.35em]">WEAVE</div>
 
-          <div className="ml-4 flex items-center gap-3 text-xs text-white/60">
+          <div className="ml-2 hidden items-center gap-3 text-xs text-white/60 sm:flex md:ml-4">
             <img src="https://flagcdn.com/w40/bh.png" alt="Bahrain flag" className="h-4 w-6 rounded-sm object-cover" />
             <span>BHD</span>
             <div className="flex items-center gap-1 rounded-md border border-white/10 px-2 py-1 text-white transition hover:border-white/30">
@@ -93,128 +93,98 @@ function Header({ page, setPage, cartCount }) {
           <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
             <button type="button" onClick={() => setPage("shop")} className="transition hover:text-white">Shop</button>
             <button type="button" onClick={() => setPage("custom")} className="transition hover:text-white">Custom</button>
-            <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">Cart {cartCount > 0 ? `(${cartCount})` : ""}</button>
-            <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Contact</button>
+            <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">
+              Cart {cartCount > 0 ? `(${cartCount})` : ""}
+            </button>
+            <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">
+              Contact
+            </button>
           </nav>
         ) : (
           <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
             <button type="button" onClick={() => setPage("home")} className="transition hover:text-white">Home</button>
             {page === "shop" ? (
-              <button type="button" onClick={() => document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Categories</button>
+              <button type="button" onClick={() => document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">
+                Categories
+              </button>
             ) : page === "custom" ? (
-              <button type="button" onClick={() => document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Form</button>
+              <button type="button" onClick={() => document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">
+                Form
+              </button>
             ) : null}
-            <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">Cart {cartCount > 0 ? `(${cartCount})` : ""}</button>
-            <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Contact</button>
+            <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">
+              Cart {cartCount > 0 ? `(${cartCount})` : ""}
+            </button>
+            <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">
+              Contact
+            </button>
           </nav>
         )}
       </div>
-    </header>
-  );
 
-  return (
-  <header className="sticky top-0 z-20 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-    <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-      <div className="flex items-center gap-3">
-        <img src="/logo.svg" alt="WEAVE logo" className="h-16 w-16 invert object-contain" />
-        <div className="text-lg tracking-[0.35em]">WEAVE</div>
+      <div className="border-t border-white/10 px-3 py-3 md:hidden">
+        <div className="flex gap-2 overflow-x-auto whitespace-nowrap text-sm text-white/70">
+          <button
+            type="button"
+            onClick={() => setPage("home")}
+            className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+          >
+            Home
+          </button>
 
-        <div className="ml-4 flex items-center gap-3 text-xs text-white/60">
-          <img src="https://flagcdn.com/w40/bh.png" alt="Bahrain flag" className="h-4 w-6 rounded-sm object-cover" />
-          <span>BHD</span>
-          <div className="flex items-center gap-1 rounded-md border border-white/10 px-2 py-1 text-white transition hover:border-white/30">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zm0 0c2.5 2.5 2.5 16.5 0 19m0-19c-2.5 2.5-2.5 16.5 0 19M3 12h18" />
-            </svg>
-            <span>EN</span>
-          </div>
+          <button
+            type="button"
+            onClick={() => setPage("shop")}
+            className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+          >
+            Shop
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setPage("custom")}
+            className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+          >
+            Custom
+          </button>
+
+          {page === "shop" ? (
+            <button
+              type="button"
+              onClick={() => document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" })}
+              className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+            >
+              Categories
+            </button>
+          ) : page === "custom" ? (
+            <button
+              type="button"
+              onClick={() => document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" })}
+              className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+            >
+              Form
+            </button>
+          ) : null}
+
+          <button
+            type="button"
+            onClick={() => setPage("cart")}
+            className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+          >
+            Cart {cartCount > 0 ? `(${cartCount})` : ""}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
+          >
+            Contact
+          </button>
         </div>
       </div>
-
-      {isHome ? (
-        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <button type="button" onClick={() => setPage("shop")} className="transition hover:text-white">Shop</button>
-          <button type="button" onClick={() => setPage("custom")} className="transition hover:text-white">Custom</button>
-          <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">Cart {cartCount > 0 ? `(${cartCount})` : ""}</button>
-          <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Contact</button>
-        </nav>
-      ) : (
-        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <button type="button" onClick={() => setPage("home")} className="transition hover:text-white">Home</button>
-          {page === "shop" ? (
-            <button type="button" onClick={() => document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Categories</button>
-          ) : page === "custom" ? (
-            <button type="button" onClick={() => document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Form</button>
-          ) : null}
-          <button type="button" onClick={() => setPage("cart")} className="transition hover:text-white">Cart {cartCount > 0 ? `(${cartCount})` : ""}</button>
-          <button type="button" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="transition hover:text-white">Contact</button>
-        </nav>
-      )}
-    </div>
-
-    <div className="border-t border-white/10 px-4 py-3 md:hidden">
-      <div className="flex items-center justify-center gap-2 overflow-x-auto text-sm text-white/70">
-        <button
-          type="button"
-          onClick={() => setPage("home")}
-          className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-        >
-          Home
-        </button>
-
-        {page === "shop" ? (
-          <button
-            type="button"
-            onClick={() => document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" })}
-            className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-          >
-            Categories
-          </button>
-        ) : page === "custom" ? (
-          <button
-            type="button"
-            onClick={() => document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" })}
-            className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-          >
-            Form
-          </button>
-        ) : null}
-
-        <button
-          type="button"
-          onClick={() => setPage("shop")}
-          className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-        >
-          Shop
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setPage("custom")}
-          className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-        >
-          Custom
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setPage("cart")}
-          className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-        >
-          Cart {cartCount > 0 ? `(${cartCount})` : ""}
-        </button>
-
-        <button
-          type="button"
-          onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-          className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 transition hover:bg-white/5"
-        >
-          Contact
-        </button>
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  );
 }
 
 function Footer() {
