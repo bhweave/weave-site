@@ -77,7 +77,7 @@ function Header({ page, setPage, cartCount }) {
           <img src="/logo.svg" alt="WEAVE logo" className="h-12 w-12 invert object-contain md:h-16 md:w-16" />
           <div className="truncate text-base tracking-[0.25em] md:text-lg md:tracking-[0.35em]">WEAVE</div>
 
-          <div className="ml-2 hidden items-center gap-3 text-xs text-white/60 sm:flex md:ml-4">
+          <div className="ml-2 flex items-center gap-2 text-xs text-white/60 md:ml-4 md:gap-3">
             <img src="https://flagcdn.com/w40/bh.png" alt="Bahrain flag" className="h-4 w-6 rounded-sm object-cover" />
             <span>BHD</span>
             <div className="flex items-center gap-1 rounded-md border border-white/10 px-2 py-1 text-white transition hover:border-white/30">
