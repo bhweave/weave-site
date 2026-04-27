@@ -292,9 +292,7 @@ function HomePage({ setPage, openProduct }) {
     </div>
   )}
 
-  <div className="absolute bottom-6 right-6 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/70">
-    {product.badge}
-  </div>
+
 </div>
                   <div className="p-6">
                     <div className="text-xs uppercase tracking-[0.28em] text-white/35">{product.category}</div>
@@ -413,9 +411,7 @@ function ShopPage({ setPage, openProduct, addToCart }) {
     </div>
   )}
 
-  <div className="absolute bottom-6 right-6 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/70">
-    {product.badge}
-  </div>
+  
 </div>
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-[0.28em] text-white/35">{product.category}</div>
@@ -731,10 +727,6 @@ const goToNextMedia = () => {
     {mediaItems[activeMedia]?.label}
   </div>
 </div>
-
-    <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">
-      {product.badge}
-    </div>
 
     <button
       type="button"
