@@ -19,6 +19,9 @@ const shopProducts = [
       "Upper Diameter: 4 cm",
       "Custom color available",
     ],
+    media: [
+    { type: "image", src: "/products/Vase-1.jpg", label: "Front View" },
+  ],
   },
   {
     id: "02",
@@ -34,6 +37,11 @@ const shopProducts = [
       "Suitable for play and display",
       "Custom color available",
     ],
+    media: [
+    { type: "image", src: "/products/Chess-1.jpg", label: "Board View" },
+    { type: "image", src: "/products/Chess-2.jpg", label: "White Pieces Close-Up" },
+    { type: "image", src: "/products/Chess-3.jpg", label: "Black Pieces Close-Up" },
+  ],
   },
   {
     id: "03",
@@ -645,12 +653,7 @@ function ProductPage({ product, setPage, openProduct, addToCart }) {
 
   if (!product) return null;
 
-  const mediaItems = [
-    { id: 1, type: "image", label: "Front View" },
-    { id: 2, type: "image", label: "Angle View" },
-    { id: 3, type: "image", label: "Detail View" },
-    { id: 4, type: "video", label: "Short Video" },
-  ];
+  const mediaItems = product.media || [];
 
   const details = product.details || [];
 
@@ -684,15 +687,25 @@ const goToNextMedia = () => {
     </button>
 
     <div>
-      <div className="text-xs uppercase tracking-[0.28em] text-white/35">
-        {mediaItems[activeMedia].type === "video" ? "Video Preview" : "Image Preview"}
-      </div>
-      <div className="mt-4 text-5xl font-semibold text-white/15">{product.id}</div>
-      <div className="mt-3 text-lg text-white/55">{mediaItems[activeMedia].label}</div>
-      <div className="mt-6 text-sm text-white/35">
-        {activeMedia + 1} / {mediaItems.length}
-      </div>
-    </div>
+      <div className="flex w-full flex-col items-center justify-center">
+  {mediaItems[activeMedia]?.type === "video" ? (
+    <video
+      src={mediaItems[activeMedia].src}
+      controls
+      className="max-h-[300px] w-full rounded-2xl object-contain"
+    />
+  ) : (
+    <img
+      src={mediaItems[activeMedia]?.src}
+      alt={mediaItems[activeMedia]?.label || product.name}
+      className="max-h-[300px] w-full rounded-2xl object-contain"
+    />
+  )}
+
+  <div className="mt-4 text-sm text-white/60">
+    {mediaItems[activeMedia]?.label}
+  </div>
+</div>
 
     <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">
       {product.badge}
