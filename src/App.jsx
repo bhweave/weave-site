@@ -686,9 +686,10 @@ const goToNextMedia = () => {
       ←
     </button>
 
-    <div>
-      <div className="flex w-full flex-col items-center justify-center">
-  {mediaItems[activeMedia]?.type === "video" ? (
+   <div className="flex w-full flex-col items-center justify-center">
+  {mediaItems.length === 0 ? (
+    <div className="text-5xl font-semibold text-white/15">{product.id}</div>
+  ) : mediaItems[activeMedia]?.type === "video" ? (
     <video
       src={mediaItems[activeMedia].src}
       controls
