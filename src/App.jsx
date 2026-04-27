@@ -20,7 +20,7 @@ const shopProducts = [
       "Custom color available",
     ],
     media: [
-    { type: "image", src: "/products/Vase-1.jpg", label: "Front View" },
+    { type: "image", src: "/products/vase-1.jpg", label: "Front View" },
   ],
   },
   {
@@ -38,9 +38,9 @@ const shopProducts = [
       "Custom color available",
     ],
     media: [
-    { type: "image", src: "/products/Chess-1.jpg", label: "Board View" },
-    { type: "image", src: "/products/Chess-2.jpg", label: "White Pieces Close-Up" },
-    { type: "image", src: "/products/Chess-3.jpg", label: "Black Pieces Close-Up" },
+    { type: "image", src: "/products/chess-1.jpg", label: "Board View" },
+    { type: "image", src: "/products/chess-2.jpg", label: "White Pieces Close-Up" },
+    { type: "image", src: "/products/chess-3.jpg", label: "Black Pieces Close-Up" },
   ],
   },
   {
