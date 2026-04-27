@@ -9,7 +9,6 @@ const shopProducts = [
     name: "Modern Flower Vase",
     category: "Home / Decor",
     price: "5 BHD",
-    badge: "Home Piece",
     tags: ["Home / Decor"],
     colorOptions: ["Black", "White", "Beige", "Terracotta"],
     description: "A modern decorative vase designed for clean shelves, tables, and minimalist spaces.",
@@ -20,7 +19,7 @@ const shopProducts = [
       "Custom color available",
     ],
     media: [
-    { type: "image", src: "/products/vase-1.jpg", label: "Front View" },
+    { type: "image", src: "/products/vase-1.jpg" },
   ],
   },
   {
@@ -28,7 +27,6 @@ const shopProducts = [
     name: "Medieval Chess Set",
     category: "Board Games",
     price: "12 BHD",
-    badge: "Statement Piece",
     tags: ["Board Games", "Toys", "Decor"],
     description: "A medieval-inspired chess set that works as both a playable board game and a display piece.",
     details: [
@@ -38,9 +36,9 @@ const shopProducts = [
       "Custom color available",
     ],
     media: [
-    { type: "image", src: "/products/chess-1.jpg", label: "Board View" },
-    { type: "image", src: "/products/chess-2.jpg", label: "White Pieces Close-Up" },
-    { type: "image", src: "/products/chess-3.jpg", label: "Black Pieces Close-Up" },
+    { type: "image", src: "/products/chess-1.jpg" },
+    { type: "image", src: "/products/chess-2.jpg" },
+    { type: "image", src: "/products/chess-3.jpg" },
   ],
   },
   {
@@ -281,10 +279,23 @@ function HomePage({ setPage, openProduct }) {
             <div className="grid gap-6 md:grid-cols-3">
               {featuredProducts.map((product) => (
                 <div key={product.id} className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] transition hover:bg-white/[0.05]">
-                  <div className="flex h-56 items-end justify-between border-b border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-6">
-                    <div className="text-4xl font-semibold text-white/20">{product.id}</div>
-                    <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">{product.badge}</div>
-                  </div>
+                  <div className="relative h-56 overflow-hidden border-b border-white/10 bg-white/[0.03]">
+  {product.media?.[0]?.src ? (
+    <img
+      src={product.media[0].src}
+      alt={product.name}
+      className="h-full w-full object-contain p-3"
+    />
+  ) : (
+    <div className="flex h-full items-end justify-between bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-6">
+      <div className="text-4xl font-semibold text-white/20">{product.id}</div>
+    </div>
+  )}
+
+  <div className="absolute bottom-6 right-6 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/70">
+    {product.badge}
+  </div>
+</div>
                   <div className="p-6">
                     <div className="text-xs uppercase tracking-[0.28em] text-white/35">{product.category}</div>
                     <h3 className="mt-3 text-xl font-medium">{product.name}</h3>
@@ -389,10 +400,23 @@ function ShopPage({ setPage, openProduct, addToCart }) {
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => (
               <div key={product.id} className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] transition hover:bg-white/[0.05]">
-                <div className="flex h-72 items-end justify-between border-b border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-6">
-                  <div className="text-5xl font-semibold text-white/20">{product.id}</div>
-                  <div className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/45">{product.badge}</div>
-                </div>
+                <div className="relative h-72 overflow-hidden border-b border-white/10 bg-white/[0.03]">
+  {product.media?.[0]?.src ? (
+    <img
+      src={product.media[0].src}
+      alt={product.name}
+      className="h-full w-full object-contain p-3"
+    />
+  ) : (
+    <div className="flex h-full items-end justify-between bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-6">
+      <div className="text-5xl font-semibold text-white/20">{product.id}</div>
+    </div>
+  )}
+
+  <div className="absolute bottom-6 right-6 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/70">
+    {product.badge}
+  </div>
+</div>
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-[0.28em] text-white/35">{product.category}</div>
                   <h3 className="mt-3 text-xl font-medium">{product.name}</h3>
@@ -676,15 +700,15 @@ const goToNextMedia = () => {
           <div id="product-gallery" className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 md:grid-cols-[1fr_1fr] md:pb-20">
             <div>
              <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6">
-  <div className="relative flex h-[420px] items-end justify-between rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-8">
+  <div className="relative flex h-[420px] items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent p-4">
     <button
-      type="button"
-      onClick={goToPreviousMedia}
-      className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg text-white transition hover:bg-black/65"
-      aria-label="Previous image"
-    >
-      ←
-    </button>
+  type="button"
+  onClick={goToPreviousMedia}
+  className="absolute left-4 top-1/2 flex h-[44px] w-[44px] shrink-0 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg leading-none text-white transition hover:bg-black/65"
+  aria-label="Previous image"
+>
+  ←
+</button>
 
    <div className="flex w-full flex-col items-center justify-center">
   {mediaItems.length === 0 ? (
@@ -693,13 +717,13 @@ const goToNextMedia = () => {
     <video
       src={mediaItems[activeMedia].src}
       controls
-      className="max-h-[300px] w-full rounded-2xl object-contain"
+      className="max-h-[360px] w-auto object-contain"
     />
   ) : (
     <img
       src={mediaItems[activeMedia]?.src}
       alt={mediaItems[activeMedia]?.label || product.name}
-      className="max-h-[300px] w-full rounded-2xl object-contain"
+      className="max-h-[360px] w-auto object-contain"
     />
   )}
 
@@ -715,8 +739,7 @@ const goToNextMedia = () => {
     <button
       type="button"
       onClick={goToNextMedia}
-      className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg text-white transition hover:bg-black/65"
-      aria-label="Next image"
+      className="absolute right-4 top-1/2 flex h-[44px] w-[44px] shrink-0 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-lg leading-none text-white transition hover:bg-black/65"
     >
       →
     </button>
